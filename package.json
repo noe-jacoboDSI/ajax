@@ -32,6 +32,9 @@
     "node": "*"
   },
   "devDependencies": {
-    "node": "0.0.0"
+    "blanket": "^1.1.5",
+    "chai": "^3.5.0",
+    "node": "0.0.0",
+    "mocha": "^2.4.5"
   }
 }

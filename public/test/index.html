@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TESTS CSV</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../global.css" />
+    <link rel="stylesheet" href="mocha.css" />
+    <link rel="stylesheet" href="../generado.css" />
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  </head>
+  <body>
+
+    <div id="mocha"><p><a href=".">Pruebas para CSV</a></p></div>
+    <div id="messages"></div>
+
+    <div class="contenido">
+      <table class="center" id="input">
+        <tr><th>Escriba aquí una entrada CSV o bien</th></tr>
+        <tr><th>Arrastre un fichero CSV hasta la zona de entrada</th></tr>
+        <tr>
+          <th>
+            <textarea class = "drop_zone" autofocus="" cols = "80" rows = "5" id="original"></textarea>
+          </th>
+          <th>
+            <button type="button" id="parse"> Analizar!</button>
+          </th>
+        </tr>
+        <tr>
+        </tr>
+        <tr>
+          <th>
+            <div class="example">
+              Click para cargar ejemplos:
+              <button class ="example" type="button">input</button>
+              <button class ="example" type="button">input2</button>
+              <button class ="example" type="button">input3</button>
+            </div>
+          </th>
+        </tr>
+        <tr>
+          <th>
+              Cargar archivo:
+              <input type="file" class="inputfile" />
+          </th>
+        </tr>
+      </table>
+
+      <div class="output" id="finaltable">
+      </div>
+    </div>
+
+
+
+    <script src="chai.js"></script>
+    <script src="mocha.js"></script>
+    <script src="blanket.js" data-cover-adapter="blanket_mocha.js" data-cover-flags="debug"></script>
+
+    <script src="calculate.js" data-cover></script>
+    <script src="../csv.js" data-cover></script>
+
+
+
+    <!--script>mocha.setup('bdd');</script-->
+        <script>mocha.setup('tdd')</script>
+        <script src="tests.js"></script>
+    <script>
+      mocha.run();
+    </script>
+  </body>
+  <footer ><!--pie de pagina-->
+      <div id="pie">
+            <a href="http://alu0100836059.github.io/pagina_personal">"    Web Personal de Jacobo"</a>
+            <a href="https://github.com/noe-jacoboDSI/ajax">"Repositorio de la organización"</a>
+            <a href="http://dsi1516.github.io/Practica1">"Web Personal de Noé"</a><!---->
+            <a href="http://noe-jacobodsi.github.io/ajax/test/index.html">TESTS</a>
+      </div>
+</footer>
+</html>
