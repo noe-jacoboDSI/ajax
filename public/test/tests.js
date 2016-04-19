@@ -9,6 +9,17 @@ suite('csv', function() {
   }
 
 
+
+  test('Introducion simple digitos', function () {
+  original.value = '1,2,3\n4,5,6';
+  calculate(original.value);
+  var valueExpected = '\n      <table id="result" class="center">\n        \n          <tbody><tr class="">\n            \n              <td>1</td>\n            \n              <td>2</td>\n            \n              <td>3</td>\n            \n          </tr>\n        \n          <tr class="">\n            \n              <td>4</td>\n            \n              <td>5</td>\n            \n              <td>6</td>\n            \n          </tr>\n        \n      </tbody></table>\n    ';
+  assert.deepEqual(finaltable.innerHTML, valueExpected);
+  });
+
+
+
+
       test('Almacenamiento local', function () {
     	original.value = 'Funciona, el, almacenamiento, interno';
     	calculate;
@@ -19,7 +30,7 @@ suite('csv', function() {
 /////////////////////////////////////////////////////////
       test('Almacenamiento local', function () {
       original.value = 'Funciona, el, almacenamiento, interno';
-      calculate(original.input);
+      calculate(original.value);
       original.value = 'nuevo valor';
       assert.deepEqual(localStorage.original, 'Funciona, el, almacenamiento, interno');
       });
@@ -33,6 +44,9 @@ suite('csv', function() {
     	var esperado ='\n      <table id="result" class="center">\n        \n          <tbody><tr class="">\n            \n              <td>a</td>\n            \n              <td>b</td>\n            \n              <td>c</td>\n            \n              <td>d</td>\n            \n          </tr>\n        \n          <tr class="">\n            \n              <td>aa</td>\n            \n              <td>bb</td>\n            \n              <td>cc</td>\n            \n              <td>dd</td>\n            \n          </tr>\n        \n      </tbody></table>\n    ' ;
     	assert.deepEqual(finaltable.innerHTML, esperado);
       });
+
+
+
       test('Introducion simple digitos', function () {
     	original.value = '1,2,3\n4,5,6';
     	main();
